@@ -1,0 +1,28 @@
+---
+import Header from "../components/sections/Header.astro";
+import Footer from "../components/sections/Footer.astro";
+import '../styles/global.css';
+
+const {title = 'Mi Comercio', lang = 'es'} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang={lang} class="h-full">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{title}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+</head>
+<body class="font-sans bg-background text-fontcolor h-full flex flex-col">
+<Header/>
+<main class="flex-grow">
+    <slot/>
+</main>
+<Footer/>
+</body>
+</html>

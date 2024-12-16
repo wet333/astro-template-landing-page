@@ -1,0 +1,23 @@
+---
+import Section from "../Section.astro";
+const products = [
+    {img: '/images/producto-1.webp', title: 'Jarrón de cerámica rústico hecho a mano'},
+    {img: '/images/producto-2.webp', title: 'Vela aromática artesanal'},
+    {img: '/images/producto-3.webp', title: 'Marco de madera artesanal con detalles tallados'},
+    {img: '/images/producto-4.webp', title: 'Billetera de cuero artesanal'},
+    {img: '/images/producto-5.webp', title: 'Taza de café artesanal de cerámica'},
+    {img: '/images/producto-6.webp', title: 'Joyero artesanal de madera con detalles tallados'},
+];
+---
+<Section id="productos">
+    <h2 class="text-2xl font-bold text-primary mb-4">Nuestros Productos</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {products.map(product => (
+                <div class="bg-background-300 rounded shadow hover:shadow-lg cursor-pointer transition duration-150
+                border-background-400">
+                    <img src={product.img} alt={product.title} class="w-full h-auto rounded-t-lg rounded-b-none mb-2"/>
+                    <h3 class="text-fontcolor px-3 pt-1 pb-2 font-semibold">{product.title}</h3>
+                </div>
+        ))}
+    </div>
+</Section>
